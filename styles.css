@@ -1,0 +1,206 @@
+/* Algemene stijlen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #5d4037;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #d7ccc8;
+    padding-bottom: 5px;
+}
+
+/* Formulier stijlen */
+.order-form {
+    background-color: #fff8e1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #8d6e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #6d4c41;
+}
+
+/* Bestellingen lijst */
+.orders {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#order-list {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.order-info {
+    flex-grow: 1;
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #b71c1c;
+}
+
+.clear-btn {
+    background-color: #5d4037;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.clear-btn:hover {
+    background-color: #3e2723;
+}
+
+/* Koffie grid */
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.coffee-option {
+    background-color: #fff8e1;
+    border: 1px solid #d7ccc8;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.coffee-option:hover {
+    background-color: #ffecb3;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.coffee-option input[type="radio"] {
+    display: none;
+}
+
+.coffee-option input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #5d4037;
+}
+
+.coffee-option label {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 1000px) {
+    .coffee-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .coffee-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .coffee-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .order-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .order-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koffie Bestelsysteem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>☕ NOS Mediaroom Koffie</h1>
+        
+        <div class="order-form">
+            <h2>Nieuwe bestelling toevoegen</h2>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Naam (optioneel)" autofocus>
+            </div>
+            <div class="form-group">
+                <div class="coffee-grid">
+                    <div class="coffee-option">
+                        <input type="radio" id="koffie-altura" name="drink" value="Koffie Altura" checked>
+                        <label for="koffie-altura">Koffie Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="cappuccino-altura" name="drink" value="Cappuccino Altura">
+                        <label for="cappuccino-altura">Cappuccino Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="espresso-altura" name="drink" value="Espresso Altura">
+                        <label for="espresso-altura">Espresso Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="latte-altura" name="drink" value="Latte Macchiato Altura">
+                        <label for="latte-altura">Latte Macchiato Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="au-lait-altura" name="drink" value="Café Au Lait Altura">
+                        <label for="au-lait-altura">Café Au Lait Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="choco-altura" name="drink" value="Chocolademelk Altura">
+                        <label for="choco-altura">Chocolademelk Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="wiener-altura" name="drink" value="Wiener Melange Altura">
+                        <label for="wiener-altura">Wiener Melange Altura</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="water" name="drink" value="Heet water">
+                        <label for="water">Heet water</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="koffie-supremo" name="drink" value="Koffie Supremo">
+                        <label for="koffie-supremo">Koffie Supremo</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="cappuccino-supremo" name="drink" value="Cappuccino Supremo">
+                        <label for="cappuccino-supremo">Cappuccino Supremo</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="espresso-supremo" name="drink" value="Espresso Supremo">
+                        <label for="espresso-supremo">Espresso Supremo</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="latte-supremo" name="drink" value="Latte Macchiato Supremo">
+                        <label for="latte-supremo">Latte Macchiato Supremo</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="au-lait-supremo" name="drink" value="Café Au Lait Supremo">
+                        <label for="au-lait-supremo">Café Au Lait Supremo</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="espresso-macchiato" name="drink" value="Esp Macchiato Supremo">
+                        <label for="espresso-macchiato">Esp Macchiato Supremo</label>
+                    </div>
+                    <div class="coffee-option">
+                        <input type="radio" id="wiener-supremo" name="drink" value="Wiener Melange Supremo">
+                        <label for="wiener-supremo">Wiener Melange Supremo</label>
+                    </div>
+                </div>
+                <input type="hidden" id="drink" name="drink" value="Koffie Altura">
+            </div>
+            <button id="add-order">Toevoegen</button>
+        </div>
+
+        <div class="orders">
+            <h2>Huidige bestellingen</h2>
+            <div id="order-list">
+                <!-- Bestellingen komen hier -->
+            </div>
+            <button id="clear-all" class="clear-btn">Alles wissen</button>
+        </div>
+
+        <div class="colleagues">
+            <h2>Collega's beheren</h2>
+            <button id="edit-colleagues">Bewerk collega's</button>
+            <div id="colleagues-editor" style="display: none;">
+                <p>Voer één collega per regel in:</p>
+                <textarea id="colleagues-list" rows="10" style="width: 100%; margin: 10px 0;"></textarea>
+                <div>
+                    <button id="save-colleagues">Opslaan</button>
+                    <button id="cancel-edit">Annuleren</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
