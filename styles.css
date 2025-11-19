@@ -136,25 +136,42 @@ button:hover {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-bottom: 15px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .coffee-option {
     background-color: #fff8e1;
     border: 1px solid #d7ccc8;
     border-radius: 4px;
-    padding: 10px;
+    padding: 12px 8px;
     cursor: pointer;
     transition: all 0.2s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.coffee-option:hover {
+.coffee-option:active {
     background-color: #ffecb3;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: scale(0.98);
 }
 
 .coffee-option input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    cursor: pointer;
 }
 
 .coffee-option input[type="radio"]:checked + label {
@@ -164,10 +181,21 @@ button:hover {
 
 .coffee-option label {
     display: block;
-    text-align: center;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     padding: 5px;
     margin: 0;
+    pointer-events: none; /* Zorgt ervoor dat de label de klik niet blokkeert */
+}
+
+/* Hover effect alleen op desktop */
+@media (hover: hover) {
+    .coffee-option:hover {
+        background-color: #ffecb3;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 }
 
 /* Responsive aanpassingen */
@@ -181,11 +209,30 @@ button:hover {
     .coffee-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .coffee-option {
+        min-height: 70px;
+        padding: 15px 10px;
+    }
+}
+
+/* iPhone specifieke aanpassingen */
+@supports (-webkit-touch-callout: none) {
+    .coffee-option {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+    }
 }
 
 @media (max-width: 480px) {
     .coffee-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .coffee-option {
+        min-height: 65px;
+        padding: 12px 10px;
     }
 }
 
